@@ -45,9 +45,9 @@ export function Nav() {
         <a 
           href="#home" 
           onClick={(e) => scrollToSection(e, "#home")}
-          className="text-xl font-heading font-bold tracking-tighter hover:text-primary transition-colors"
+          className="text-2xl font-heading font-bold tracking-tighter hover:text-primary transition-colors"
         >
-          Bisma<span className="text-primary">.dev</span>
+          <span className="text-primary">B</span>
         </a>
 
         {/* Desktop Nav */}
