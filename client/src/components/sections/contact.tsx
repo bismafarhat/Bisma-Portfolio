@@ -1,11 +1,62 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { personalInfo } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Phone, Linkedin, Github } from "lucide-react";
+import { toast } from "sonner";
 
 export function Contact() {
+  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast.success(data.message);
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        toast.error(data.message || "Failed to send message");
+      }
+    } catch (error) {
+      toast.error("Error sending message. Please try again.");
+      console.error("Contact form error:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-24 bg-secondary/10 relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
@@ -68,30 +119,59 @@ export function Contact() {
           </div>
 
           <div className="glass-card p-8 rounded-2xl">
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Name</label>
-                  <Input placeholder="John Doe" className="bg-secondary/50 border-white/10 focus:border-primary/50" />
+                  <Input 
+                    placeholder="John Doe" 
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="bg-secondary/50 border-white/10 focus:border-primary/50" 
+                  />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Email</label>
-                  <Input placeholder="john@example.com" type="email" className="bg-secondary/50 border-white/10 focus:border-primary/50" />
+                  <Input 
+                    placeholder="john@example.com" 
+                    type="email" 
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="bg-secondary/50 border-white/10 focus:border-primary/50" 
+                  />
                 </div>
               </div>
               
               <div className="space-y-2">
                 <label className="text-sm font-medium">Subject</label>
-                <Input placeholder="Project Inquiry" className="bg-secondary/50 border-white/10 focus:border-primary/50" />
+                <Input 
+                  placeholder="Project Inquiry" 
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  className="bg-secondary/50 border-white/10 focus:border-primary/50" 
+                />
               </div>
               
               <div className="space-y-2">
                 <label className="text-sm font-medium">Message</label>
-                <Textarea placeholder="Tell me about your project..." className="min-h-[150px] bg-secondary/50 border-white/10 focus:border-primary/50" />
+                <Textarea 
+                  placeholder="Tell me about your project..." 
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  className="min-h-[150px] bg-secondary/50 border-white/10 focus:border-primary/50" 
+                />
               </div>
               
-              <Button type="submit" className="w-full text-base">
-                Send Message
+              <Button type="submit" className="w-full text-base" disabled={loading}>
+                {loading ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </div>
