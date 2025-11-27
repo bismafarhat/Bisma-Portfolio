@@ -78,6 +78,24 @@ export const experience: Experience[] = [
       "Added 100+ products, optimized SEO content, improved listings.",
       "Achieved 30 percent growth in product visibility."
     ]
+  },
+  {
+    company: "Google Developer Student Club",
+    role: "Web Team Member",
+    period: "Oct 2023 – May 2024",
+    location: "Gulberg Greens",
+    description: [
+      "Contributed to web-related activities and attended sessions on modern frameworks."
+    ]
+  },
+  {
+    company: "IEEE Women In Engineering",
+    role: "Volunteer",
+    period: "Oct 2023 – May 2024",
+    location: "Gulberg Greens",
+    description: [
+      "Assisted in organizing tech events, enhancing teamwork and communication skills."
+    ]
   }
 ];
 
