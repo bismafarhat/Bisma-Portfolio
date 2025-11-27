@@ -23,15 +23,9 @@ export function Hero() {
             <span className="text-primary text-sm font-medium">Available for Work</span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-heading font-bold leading-tight mb-6">
-            Hi, I'm <br />
-            <span className="text-gradient">{personalInfo.name}</span>
+          <h1 className="text-4xl md:text-5xl font-heading font-bold leading-tight mb-8">
+            Hi, I'm <span className="text-gradient">{personalInfo.name}</span>, a Frontend Developer passionate about building responsive and user-friendly web applications while continuously improving my skills.
           </h1>
-          
-          <p className="text-xl text-muted-foreground mb-8 max-w-lg leading-relaxed">
-            {personalInfo.role} specializing in building exceptional digital experiences. 
-            Creating responsive, accessible, and performant web applications.
-          </p>
           
           <div className="flex flex-wrap gap-4">
             <Button size="lg" className="rounded-full text-base px-8" asChild>
