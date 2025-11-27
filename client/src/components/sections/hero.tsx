@@ -34,7 +34,12 @@ export function Hero() {
                 View Projects <ArrowRight className="ml-2 w-4 h-4" />
               </a>
             </Button>
-            <Button size="lg" variant="outline" className="rounded-full text-base px-8 border-white/10 hover:bg-white/5" asChild>
+            <Button size="lg" variant="outline" className="rounded-full text-base px-8 border-white/10 hover:bg-white/5 hover:border-primary/50 transition-colors" asChild>
+              <a href="/bisma-resume.pdf" download>
+                Download Resume <Download className="ml-2 w-4 h-4" />
+              </a>
+            </Button>
+            <Button size="lg" variant="outline" className="rounded-full text-base px-8 border-white/10 hover:bg-white/5 hover:border-primary/50 transition-colors" asChild>
               <a href="#contact">Contact Me</a>
             </Button>
           </div>
