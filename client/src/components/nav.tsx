@@ -45,9 +45,10 @@ export function Nav() {
         <a 
           href="#home" 
           onClick={(e) => scrollToSection(e, "#home")}
-          className="text-2xl font-heading font-bold tracking-tighter hover:text-primary transition-colors"
+          className="relative inline-flex items-center justify-center w-10 h-10 hover:scale-110 transition-transform duration-300"
         >
-          <span className="text-primary">B</span>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary to-blue-500 rounded-lg opacity-0 hover:opacity-20 transition-opacity" />
+          <span className="text-gradient text-2xl font-heading font-bold">B</span>
         </a>
 
         {/* Desktop Nav */}
