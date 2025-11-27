@@ -1,4 +1,4 @@
-import { LucideIcon, Code2, Layout, Terminal, Cpu, Database, Palette } from "lucide-react";
+import { LucideIcon, Code2, Layout, Terminal, Cpu, Database, Palette, Zap, Users, Brain, Award } from "lucide-react";
 
 export interface Project {
   title: string;
@@ -22,6 +22,12 @@ export interface Skill {
   category: "Frontend" | "Tools" | "Soft Skills";
 }
 
+export interface Certification {
+  title: string;
+  provider: string;
+  duration?: string;
+}
+
 export const personalInfo = {
   name: "Bisma Farhat",
   role: "Frontend Developer",
@@ -38,6 +44,16 @@ export const skills: Skill[] = [
   { name: "JavaScript (ES6+)", icon: Terminal, category: "Frontend" },
   { name: "HTML5 & CSS3", icon: Layout, category: "Frontend" },
   { name: "Responsive Design", icon: Palette, category: "Frontend" },
+];
+
+export const coreSkills: Skill[] = [
+  { name: "Problem Solving", icon: Brain, category: "Soft Skills" },
+  { name: "Team Collaboration", icon: Users, category: "Soft Skills" },
+  { name: "Communication", icon: Zap, category: "Soft Skills" },
+  { name: "Flexibility", icon: Zap, category: "Soft Skills" },
+];
+
+export const tools: Skill[] = [
   { name: "Git/GitHub", icon: Database, category: "Tools" },
   { name: "VS Code", icon: Cpu, category: "Tools" },
 ];
@@ -86,5 +102,25 @@ export const education = [
     institution: "Riphah International University, Islamabad",
     period: "Jan 2022 – Dec 2025",
     gpa: "3.0"
+  }
+];
+
+export const certifications: Certification[] = [
+  {
+    title: "Introduction to Front-End Development",
+    provider: "Meta – Coursera"
+  },
+  {
+    title: "MERN Stack Course",
+    provider: "NAVTTC",
+    duration: "3 Months"
+  },
+  {
+    title: "Frontend Development Bootcamp",
+    provider: "7 Days"
+  },
+  {
+    title: "HTML, CSS, JavaScript",
+    provider: "NFTP"
   }
 ];
