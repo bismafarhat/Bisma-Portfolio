@@ -4,6 +4,17 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Github, ExternalLink } from "lucide-react";
+import ecommerceImg from "@assets/generated_images/e-commerce_website_product_listing_interface.png";
+import landingImg from "@assets/generated_images/modern_responsive_landing_page_hero_section.png";
+import todoImg from "@assets/generated_images/to_do_list_application_with_task_management.png";
+import counterImg from "@assets/generated_images/counter_application_with_increment_decrement_buttons.png";
+
+const projectImages: { [key: string]: string } = {
+  "e-commerce_website_product_listing_interface.png": ecommerceImg,
+  "modern_responsive_landing_page_hero_section.png": landingImg,
+  "to_do_list_application_with_task_management.png": todoImg,
+  "counter_application_with_increment_decrement_buttons.png": counterImg,
+};
 
 export function Projects() {
   return (
@@ -30,11 +41,20 @@ export function Projects() {
             >
               <Card className="h-full flex flex-col bg-secondary/20 border-white/5 overflow-hidden hover:border-primary/50 transition-all duration-300 hover:shadow-lg group">
                 <div className="h-48 bg-gradient-to-br from-secondary to-black relative overflow-hidden">
-                    <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/10 transition-colors" />
-                    {/* Placeholder for project image - could use a pattern or gradient */}
-                    <div className="absolute inset-0 flex items-center justify-center text-primary/20 font-heading font-bold text-4xl opacity-20 rotate-[-12deg] scale-150">
-                        {project.title}
-                    </div>
+                    {project.image && projectImages[project.image] ? (
+                      <img 
+                        src={projectImages[project.image]} 
+                        alt={project.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    ) : (
+                      <>
+                        <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/10 transition-colors" />
+                        <div className="absolute inset-0 flex items-center justify-center text-primary/20 font-heading font-bold text-4xl opacity-20 rotate-[-12deg] scale-150">
+                            {project.title}
+                        </div>
+                      </>
+                    )}
                 </div>
                 
                 <CardHeader>

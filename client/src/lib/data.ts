@@ -6,6 +6,7 @@ export interface Project {
   tech: string[];
   date: string;
   link?: string;
+  image?: string;
 }
 
 export interface Experience {
@@ -105,28 +106,32 @@ export const projects: Project[] = [
     description: "Developed a full-stack e-commerce website with product listings, authentication, and cart functionality. Worked with REST APIs, backend routing, and MongoDB integration to handle dynamic product data.",
     tech: ["React", "Node.js", "Express", "MongoDB"],
     date: "May 2024",
-    link: "https://github.com/bismafarhat"
+    link: "https://github.com/bismafarhat",
+    image: "e-commerce_website_product_listing_interface.png"
   },
   {
     title: "Responsive Landing Page",
     description: "Designed a modern landing page with animations and adaptive layout. Optimized for mobile-first responsive design.",
     tech: ["HTML", "CSS", "Javascript"],
     date: "May 2024",
-    link: "https://github.com/bismafarhat"
+    link: "https://github.com/bismafarhat",
+    image: "modern_responsive_landing_page_hero_section.png"
   },
   {
     title: "To Do List",
     description: "Built an interactive To Do List application with full CRUD functionality. Features include adding, editing, deleting tasks with a clean and intuitive UI. Demonstrates proficiency in DOM manipulation and JavaScript ES6+ features.",
     tech: ["JavaScript", "HTML", "CSS"],
     date: "Aug 2023",
-    link: "https://github.com/bismafarhat"
+    link: "https://github.com/bismafarhat",
+    image: "to_do_list_application_with_task_management.png"
   },
   {
     title: "Counter Application",
     description: "Developed a functional counter application with increment, decrement, and reset capabilities. Showcases understanding of state management and event handling in vanilla JavaScript.",
     tech: ["JavaScript", "HTML", "CSS"],
     date: "Aug 2023",
-    link: "https://github.com/bismafarhat"
+    link: "https://github.com/bismafarhat",
+    image: "counter_application_with_increment_decrement_buttons.png"
   }
 ];
 
