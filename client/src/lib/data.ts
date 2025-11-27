@@ -36,7 +36,7 @@ export const personalInfo = {
   location: "Islamabad, Pakistan",
   linkedin: "https://www.linkedin.com/in/bisma-farhat-21b070248/",
   github: "https://github.com/bismafarhat",
-  about: "Frontend Developer (Beginner) with foundational skills in HTML, CSS, JavaScript and React. Passionate about building responsive and user-friendly websites, and eager to enhance skills through hands-on projects and professional training. Quick learner with a strong motivation to grow as a web developer."
+  about: "Frontend Developer passionate about building responsive and user-friendly web applications while continuously improving my skills."
 };
 
 export const skills: Skill[] = [
