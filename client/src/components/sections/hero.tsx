@@ -25,7 +25,7 @@ export function Hero() {
           
           <h1 className="text-4xl md:text-5xl font-heading font-bold leading-tight mb-8">
             Hi, I'm <span className="text-gradient">{personalInfo.name}</span>,<br />
-            Frontend Developer passionate about creating responsive, user-friendly web applications and growing my skills.
+            Frontend Developer creating responsive, user-friendly web apps.
           </h1>
           
           <div className="flex flex-wrap gap-4">
